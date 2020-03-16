@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   var blogs = new List<Blog>();
 
   _getBlog() {
-    API.getUsers().then((response) {
+    API.getPosts().then((response) {
       setState(() {
         Iterable list = json.decode(response.body);
         blogs = list.map((model) => Blog.fromJson(model)).toList();
